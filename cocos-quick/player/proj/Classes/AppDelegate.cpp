@@ -12,6 +12,7 @@
 #include "luabinding/lua_cocos2dx_extension_nanovg_manual.hpp"
 #include "luabinding/HelperFunc_luabinding.h"
 #include "lua_extensions/lua_extensions_more.h"
+#include "node-ex/lua_cocos2dx_quick_manual.hpp"
 #include "PlayerProtocol.h"
 
 using namespace CocosDenshion;
@@ -81,7 +82,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     quick_module_register(L);
 
     LuaStack* stack = engine->getLuaStack();
-    stack->setXXTEAKeyAndSign("2dxLua", "XXTEA");
+//    stack->setXXTEAKeyAndSign("2dxLua", "XXTEA");
     
     
     StartupCall *call = StartupCall::create(this);
