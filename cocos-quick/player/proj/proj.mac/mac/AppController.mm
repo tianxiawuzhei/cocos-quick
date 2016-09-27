@@ -279,11 +279,11 @@ std::string getCurAppName(void)
             buf << "{\"name\":\"close\"}";
             forwardEvent.setDataString(buf.str());
             Director::getInstance()->getEventDispatcher()->dispatchEvent(&forwardEvent);
-            if (forwardEvent.getResult().compare("cancel") != 0)
-            {
-                GLViewImpl *glview = (GLViewImpl *) Director::getInstance()->getOpenGLView();
-                glfwSetWindowShouldClose(glview->getWindow(), 1);
-            }
+//            if (forwardEvent.getResult().compare("cancel") != 0)
+//            {
+//                GLViewImpl *glview = (GLViewImpl *) Director::getInstance()->getOpenGLView();
+//                glfwSetWindowShouldClose(glview->getWindow(), 1);
+//            }
         });
     
     ProjectConfig& lambdaProject = _project;
@@ -317,7 +317,7 @@ std::string getCurAppName(void)
     const string projectDir = _project.getProjectDir();
     if (projectDir.length())
     {
-        FileUtils::getInstance()->setSearchRootPath(projectDir.c_str());
+        FileUtils::getInstance()->setDefaultResourceRootPath(projectDir.c_str());
         if (_project.isWriteDebugLogToFile())
         {
             [self writeDebugLogToFile:_project.getDebugLogFilePath()];
