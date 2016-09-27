@@ -70,7 +70,6 @@ public:
     inline void setDataString(const std::string& str) { _eventDataString = str; };
     inline const std::string& getDataString() const { return _eventDataString; };
     
-    //
 protected:
     void* _userData;       ///< User data
     std::string _eventName;
