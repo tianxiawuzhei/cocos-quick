@@ -65,9 +65,18 @@ public:
      * @return The name of the event.
      */
     inline const std::string& getEventName() const { return _eventName; };
+    
+    //zq modify
+    inline void setDataString(const std::string& str) { _eventDataString = str; };
+    inline const std::string& getDataString() const { return _eventDataString; };
+    
+    //
 protected:
     void* _userData;       ///< User data
     std::string _eventName;
+    
+    //zq modify
+    std::string _eventDataString;
 };
 
 NS_CC_END
