@@ -38,67 +38,68 @@
 		9FD01B2919F8C6A3005E0C49 /* PlayerMessageBoxServiceMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FD01B2019F8C6A3005E0C49 /* PlayerMessageBoxServiceMac.mm */; };
 		9FD01B2A19F8C6A3005E0C49 /* PlayerTaskServiceMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FD01B2219F8C6A3005E0C49 /* PlayerTaskServiceMac.mm */; };
 		9FD01B2D19F8C6BA005E0C49 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FD01B2C19F8C6BA005E0C49 /* AppController.mm */; };
+		A24952461D9A6443001E033F /* ProjectConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A24952441D9A6443001E033F /* ProjectConfig.cpp */; };
 		C033B51D191B337200D06937 /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C033B51A191B337200D06937 /* VisibleRect.cpp */; };
 		C07828F818B4D72E00BD2287 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C07828F418B4D72E00BD2287 /* main.m */; };
 		F405C6C919ED14AA005AD31C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F405C6CB19ED14AA005AD31C /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A24952011D9A52BC001E033F /* PBXContainerItemProxy */ = {
+		A24952241D9A6132001E033F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A2DE5FBC1D9A2E5800D69F39 /* libquick.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A2DE601E1D9A364C00D69F39;
-			remoteInfo = libquickmac;
-		};
-		A24952091D9A5335001E033F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A24952031D9A5334001E033F /* cocos2d_libs.xcodeproj */;
+			containerPortal = A249521E1D9A6131001E033F /* cocos2d_libs.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1551A33F158F2AB200E66CFE;
 			remoteInfo = "libcocos2d Mac";
 		};
-		A249520B1D9A5335001E033F /* PBXContainerItemProxy */ = {
+		A24952261D9A6132001E033F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A24952031D9A5334001E033F /* cocos2d_libs.xcodeproj */;
+			containerPortal = A249521E1D9A6131001E033F /* cocos2d_libs.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = A07A4D641783777C0073F6A7;
 			remoteInfo = "libcocos2d iOS";
 		};
-		A249520D1D9A5335001E033F /* PBXContainerItemProxy */ = {
+		A24952281D9A6132001E033F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A24952031D9A5334001E033F /* cocos2d_libs.xcodeproj */;
+			containerPortal = A249521E1D9A6131001E033F /* cocos2d_libs.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 507B40FD1C31BDD30067B53E;
 			remoteInfo = "libcocos2d tvOS";
 		};
-		A24952151D9A534C001E033F /* PBXContainerItemProxy */ = {
+		A249522F1D9A613C001E033F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A249520F1D9A534B001E033F /* cocos2d_lua_bindings.xcodeproj */;
+			containerPortal = A249522A1D9A613B001E033F /* libquick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A2DE5C421D9A2AF800D69F39;
+			remoteInfo = libquickios;
+		};
+		A24952311D9A613C001E033F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A249522A1D9A613B001E033F /* libquick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A2DE601E1D9A364C00D69F39;
+			remoteInfo = libquickmac;
+		};
+		A24952391D9A615A001E033F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A24952331D9A6159001E033F /* cocos2d_lua_bindings.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 15C1C2CC198748D200A46ACC;
 			remoteInfo = "libluacocos2d Mac";
 		};
-		A24952171D9A534C001E033F /* PBXContainerItemProxy */ = {
+		A249523B1D9A615A001E033F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A249520F1D9A534B001E033F /* cocos2d_lua_bindings.xcodeproj */;
+			containerPortal = A24952331D9A6159001E033F /* cocos2d_lua_bindings.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 15EFA616198B2DAA000C57D3;
 			remoteInfo = "libluacocos2d iOS";
 		};
-		A24952191D9A534C001E033F /* PBXContainerItemProxy */ = {
+		A249523D1D9A615A001E033F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A249520F1D9A534B001E033F /* cocos2d_lua_bindings.xcodeproj */;
+			containerPortal = A24952331D9A6159001E033F /* cocos2d_lua_bindings.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 507B43531C31FA0C0067B53E;
 			remoteInfo = "libluacocos2d tvOS";
-		};
-		A2DE5FC01D9A2E5800D69F39 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A2DE5FBC1D9A2E5800D69F39 /* libquick.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A2DE5C421D9A2AF800D69F39;
-			remoteInfo = libquick;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -162,9 +163,11 @@
 		9FD01B2219F8C6A3005E0C49 /* PlayerTaskServiceMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerTaskServiceMac.mm; sourceTree = "<group>"; };
 		9FD01B2B19F8C6BA005E0C49 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		9FD01B2C19F8C6BA005E0C49 /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppController.mm; sourceTree = "<group>"; };
-		A24952031D9A5334001E033F /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../../../libs/cocos2dx/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
-		A249520F1D9A534B001E033F /* cocos2d_lua_bindings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_lua_bindings.xcodeproj; path = "../../../libs/cocos2dx/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj"; sourceTree = "<group>"; };
-		A2DE5FBC1D9A2E5800D69F39 /* libquick.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libquick.xcodeproj; path = ../../../libs/libquick/proj.ios_mac/libquick.xcodeproj; sourceTree = "<group>"; };
+		A249521E1D9A6131001E033F /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../../../publibs/cocos2dx/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
+		A249522A1D9A613B001E033F /* libquick.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libquick.xcodeproj; path = ../../../publibs/libquick/proj.ios_mac/libquick.xcodeproj; sourceTree = "<group>"; };
+		A24952331D9A6159001E033F /* cocos2d_lua_bindings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_lua_bindings.xcodeproj; path = "../../../publibs/cocos2dx/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj"; sourceTree = "<group>"; };
+		A24952441D9A6443001E033F /* ProjectConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProjectConfig.cpp; sourceTree = "<group>"; };
+		A24952451D9A6443001E033F /* ProjectConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectConfig.h; sourceTree = "<group>"; };
 		C033B51A191B337200D06937 /* VisibleRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VisibleRect.cpp; path = ../Classes/VisibleRect.cpp; sourceTree = "<group>"; };
 		C033B51B191B337200D06937 /* VisibleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VisibleRect.h; path = ../Classes/VisibleRect.h; sourceTree = "<group>"; };
 		C07828F418B4D72E00BD2287 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -263,41 +266,50 @@
 			name = player;
 			sourceTree = "<group>";
 		};
-		A24952041D9A5334001E033F /* Products */ = {
+		A249521F1D9A6131001E033F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A249520A1D9A5335001E033F /* libcocos2d Mac.a */,
-				A249520C1D9A5335001E033F /* libcocos2d iOS.a */,
-				A249520E1D9A5335001E033F /* libcocos2d tvOS.a */,
+				A24952251D9A6132001E033F /* libcocos2d Mac.a */,
+				A24952271D9A6132001E033F /* libcocos2d iOS.a */,
+				A24952291D9A6132001E033F /* libcocos2d tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A24952101D9A534B001E033F /* Products */ = {
+		A249522B1D9A613B001E033F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A24952161D9A534C001E033F /* libluacocos2d Mac.a */,
-				A24952181D9A534C001E033F /* libluacocos2d iOS.a */,
-				A249521A1D9A534C001E033F /* libluacocos2d tvOS.a */,
+				A24952301D9A613C001E033F /* liblibquickios.a */,
+				A24952321D9A613C001E033F /* liblibquickmac.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A2DE5FBD1D9A2E5800D69F39 /* Products */ = {
+		A24952341D9A6159001E033F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A2DE5FC11D9A2E5800D69F39 /* liblibquickios.a */,
-				A24952021D9A52BC001E033F /* liblibquickmac.a */,
+				A249523A1D9A615A001E033F /* libluacocos2d Mac.a */,
+				A249523C1D9A615A001E033F /* libluacocos2d iOS.a */,
+				A249523E1D9A615A001E033F /* libluacocos2d tvOS.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A24952431D9A6443001E033F /* ProjectConfig */ = {
+			isa = PBXGroup;
+			children = (
+				A24952441D9A6443001E033F /* ProjectConfig.cpp */,
+				A24952451D9A6443001E033F /* ProjectConfig.h */,
+			);
+			path = ProjectConfig;
 			sourceTree = "<group>";
 		};
 		F293B3BD15EB7BE500256477 = {
 			isa = PBXGroup;
 			children = (
-				A249520F1D9A534B001E033F /* cocos2d_lua_bindings.xcodeproj */,
-				A24952031D9A5334001E033F /* cocos2d_libs.xcodeproj */,
-				A2DE5FBC1D9A2E5800D69F39 /* libquick.xcodeproj */,
+				A24952331D9A6159001E033F /* cocos2d_lua_bindings.xcodeproj */,
+				A249522A1D9A613B001E033F /* libquick.xcodeproj */,
+				A249521E1D9A6131001E033F /* cocos2d_libs.xcodeproj */,
 				5023817117EBBE3400990C9B /* mac */,
 				F293BB7C15EB830F00256477 /* Classes */,
 				F293B3CB15EB7BE500256477 /* Frameworks */,
@@ -344,6 +356,7 @@
 		F293BB7C15EB830F00256477 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A24952431D9A6443001E033F /* ProjectConfig */,
 				F293BB7E15EB831F00256477 /* AppDelegate.cpp */,
 				F293BB7F15EB831F00256477 /* AppDelegate.h */,
 				15427CE2198F237300DC375D /* lua_module_register.h */,
@@ -403,16 +416,16 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = A24952041D9A5334001E033F /* Products */;
-					ProjectRef = A24952031D9A5334001E033F /* cocos2d_libs.xcodeproj */;
+					ProductGroup = A249521F1D9A6131001E033F /* Products */;
+					ProjectRef = A249521E1D9A6131001E033F /* cocos2d_libs.xcodeproj */;
 				},
 				{
-					ProductGroup = A24952101D9A534B001E033F /* Products */;
-					ProjectRef = A249520F1D9A534B001E033F /* cocos2d_lua_bindings.xcodeproj */;
+					ProductGroup = A24952341D9A6159001E033F /* Products */;
+					ProjectRef = A24952331D9A6159001E033F /* cocos2d_lua_bindings.xcodeproj */;
 				},
 				{
-					ProductGroup = A2DE5FBD1D9A2E5800D69F39 /* Products */;
-					ProjectRef = A2DE5FBC1D9A2E5800D69F39 /* libquick.xcodeproj */;
+					ProductGroup = A249522B1D9A613B001E033F /* Products */;
+					ProjectRef = A249522A1D9A613B001E033F /* libquick.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -423,60 +436,60 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		A24952021D9A52BC001E033F /* liblibquickmac.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = liblibquickmac.a;
-			remoteRef = A24952011D9A52BC001E033F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A249520A1D9A5335001E033F /* libcocos2d Mac.a */ = {
+		A24952251D9A6132001E033F /* libcocos2d Mac.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libcocos2d Mac.a";
-			remoteRef = A24952091D9A5335001E033F /* PBXContainerItemProxy */;
+			remoteRef = A24952241D9A6132001E033F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A249520C1D9A5335001E033F /* libcocos2d iOS.a */ = {
+		A24952271D9A6132001E033F /* libcocos2d iOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libcocos2d iOS.a";
-			remoteRef = A249520B1D9A5335001E033F /* PBXContainerItemProxy */;
+			remoteRef = A24952261D9A6132001E033F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A249520E1D9A5335001E033F /* libcocos2d tvOS.a */ = {
+		A24952291D9A6132001E033F /* libcocos2d tvOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libcocos2d tvOS.a";
-			remoteRef = A249520D1D9A5335001E033F /* PBXContainerItemProxy */;
+			remoteRef = A24952281D9A6132001E033F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A24952161D9A534C001E033F /* libluacocos2d Mac.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libluacocos2d Mac.a";
-			remoteRef = A24952151D9A534C001E033F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A24952181D9A534C001E033F /* libluacocos2d iOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libluacocos2d iOS.a";
-			remoteRef = A24952171D9A534C001E033F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A249521A1D9A534C001E033F /* libluacocos2d tvOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libluacocos2d tvOS.a";
-			remoteRef = A24952191D9A534C001E033F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A2DE5FC11D9A2E5800D69F39 /* liblibquickios.a */ = {
+		A24952301D9A613C001E033F /* liblibquickios.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = liblibquickios.a;
-			remoteRef = A2DE5FC01D9A2E5800D69F39 /* PBXContainerItemProxy */;
+			remoteRef = A249522F1D9A613C001E033F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A24952321D9A613C001E033F /* liblibquickmac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblibquickmac.a;
+			remoteRef = A24952311D9A613C001E033F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A249523A1D9A615A001E033F /* libluacocos2d Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libluacocos2d Mac.a";
+			remoteRef = A24952391D9A615A001E033F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A249523C1D9A615A001E033F /* libluacocos2d iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libluacocos2d iOS.a";
+			remoteRef = A249523B1D9A615A001E033F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A249523E1D9A615A001E033F /* libluacocos2d tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libluacocos2d tvOS.a";
+			remoteRef = A249523D1D9A615A001E033F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -518,6 +531,7 @@
 				9FD0193519F8C4D4005E0C49 /* PlayerUtils.cpp in Sources */,
 				9FD01B1219F8C69C005E0C49 /* ConsoleWindowController.m in Sources */,
 				9FD01B2A19F8C6A3005E0C49 /* PlayerTaskServiceMac.mm in Sources */,
+				A24952461D9A6443001E033F /* ProjectConfig.cpp in Sources */,
 				9FD0192F19F8C4D4005E0C49 /* PlayerLuaCoreManual.cpp in Sources */,
 				9FD01B2719F8C6A3005E0C49 /* PlayerMac.mm in Sources */,
 				9FD01B2619F8C6A3005E0C49 /* PlayerFileDialogServiceMac.mm in Sources */,
@@ -625,7 +639,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../.. $(SRCROOT)/../../../cocos $(SRCROOT)/../../../cocos/base $(SRCROOT)/../../../cocos/physics $(SRCROOT)/../../../cocos/math/kazmath $(SRCROOT)/../../../cocos/2d $(SRCROOT)/../../../cocos/ui $(SRCROOT)/../../../cocos/network $(SRCROOT)/../../../cocos/audio/include $(SRCROOT)/../../../cocos/editor-support $(SRCROOT)/../../../extensions $(SRCROOT)/../../../external $(SRCROOT)/../../../external/chipmunk/include/chipmunk $(SRCROOT)/../../../external/lua/luajit/include $(SRCROOT)/../../../external/lua/tolua $(SRCROOT)/../../../cocos/scripting/lua-bindings/manual $(SRCROOT)/../../../cocos/scripting/lua-bindings/auto $(SRCROOT)/../../lib/quick-src/ $(SRCROOT)/../../lib/quick-src/extra";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../.. $(SRCROOT)/../../../publibs/cocos2dx/cocos $(SRCROOT)/../../../publibs/cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../../publibs/cocos2dx/cocos/base $(SRCROOT)/../../../publibs/cocos2dx/cocos/physics $(SRCROOT)/../../../publibs/cocos2dx/cocos/math/kazmath $(SRCROOT)/../../../publibs/cocos2dx/cocos/2d $(SRCROOT)/../../../publibs/cocos2dx/cocos/ui $(SRCROOT)/../../../publibs/cocos2dx/cocos/network $(SRCROOT)/../../../publibs/cocos2dx/cocos/audio/include $(SRCROOT)/../../../publibs/cocos2dx/cocos/editor-support $(SRCROOT)/../../../publibs/cocos2dx/extensions $(SRCROOT)/../../../publibs/cocos2dx/external $(SRCROOT)/../../../publibs/cocos2dx/external/chipmunk/include/chipmunk $(SRCROOT)/../../../publibs/cocos2dx/external/lua/luajit/include $(SRCROOT)/../../../publibs/cocos2dx/external/lua/tolua $(SRCROOT)/../../../publibs/cocos2dx/cocos/scripting/lua-bindings/auto $(SRCROOT)/../../../publibs/cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../../publibs/libquick/quick-src/extra $(SRCROOT)/../../../publibs/libquick/quick-src";
 			};
 			name = Debug;
 		};
@@ -652,7 +666,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../.. $(SRCROOT)/../../../cocos $(SRCROOT)/../../../cocos/base $(SRCROOT)/../../../cocos/physics $(SRCROOT)/../../../cocos/math/kazmath $(SRCROOT)/../../../cocos/2d $(SRCROOT)/../../../cocos/ui $(SRCROOT)/../../../cocos/network $(SRCROOT)/../../../cocos/audio/include $(SRCROOT)/../../../cocos/editor-support $(SRCROOT)/../../../extensions $(SRCROOT)/../../../external $(SRCROOT)/../../../external/chipmunk/include/chipmunk $(SRCROOT)/../../../external/lua/luajit/include $(SRCROOT)/../../../external/lua/tolua $(SRCROOT)/../../../cocos/scripting/lua-bindings/manual $(SRCROOT)/../../../cocos/scripting/lua-bindings/auto $(SRCROOT)/../../lib/quick-src/ $(SRCROOT)/../../lib/quick-src/extra";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../.. $(SRCROOT)/../../../publibs/cocos2dx/cocos $(SRCROOT)/../../../publibs/cocos2dx/cocos/scripting/lua-bindings/manual $(SRCROOT)/../../../publibs/cocos2dx/cocos/base $(SRCROOT)/../../../publibs/cocos2dx/cocos/physics $(SRCROOT)/../../../publibs/cocos2dx/cocos/math/kazmath $(SRCROOT)/../../../publibs/cocos2dx/cocos/2d $(SRCROOT)/../../../publibs/cocos2dx/cocos/ui $(SRCROOT)/../../../publibs/cocos2dx/cocos/network $(SRCROOT)/../../../publibs/cocos2dx/cocos/audio/include $(SRCROOT)/../../../publibs/cocos2dx/cocos/editor-support $(SRCROOT)/../../../publibs/cocos2dx/extensions $(SRCROOT)/../../../publibs/cocos2dx/external $(SRCROOT)/../../../publibs/cocos2dx/external/chipmunk/include/chipmunk $(SRCROOT)/../../../publibs/cocos2dx/external/lua/luajit/include $(SRCROOT)/../../../publibs/cocos2dx/external/lua/tolua $(SRCROOT)/../../../publibs/cocos2dx/cocos/scripting/lua-bindings/auto $(SRCROOT)/../../../publibs/cocos2dx/external/glfw3/include/mac $(SRCROOT)/../../../publibs/libquick/quick-src/extra $(SRCROOT)/../../../publibs/libquick/quick-src";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
