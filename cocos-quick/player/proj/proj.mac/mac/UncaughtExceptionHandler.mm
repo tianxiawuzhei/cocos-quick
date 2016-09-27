@@ -25,7 +25,7 @@ void MySignalHandler(int signal)
     cocos2d::ScriptEngineProtocol* engine = cocos2d::ScriptEngineManager::getInstance()->getScriptEngine();
     if (engine)
     {
-        engine->handleAssert("UncaughtException", 0, 0, 0);
+        engine->handleAssert("UncaughtException");
     }
     return;
 }
