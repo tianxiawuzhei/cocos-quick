@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # This script is used to generate luabinding glue codes.
 # Android ndk version must be ndk-r9b.
@@ -18,7 +18,8 @@ def _check_ndk_root_env():
     '''
 
     try:
-        NDK_ROOT = os.environ['NDK_ROOT']
+        # NDK_ROOT = os.environ['NDK_ROOT']
+        NDK_ROOT = "/Users/staff/Documents/worksoft/android-ndk-r9"
     except Exception:
         print "NDK_ROOT not defined. Please define NDK_ROOT in your environment."
         sys.exit(1)
@@ -108,7 +109,7 @@ def main():
     config.set('DEFAULT', 'cocosdir', cocos_root)
     config.set('DEFAULT', 'cxxgeneratordir', cxx_generator_root)
     config.set('DEFAULT', 'extra_flags', '')
-    
+
     if '3.4' in llvm_path:
         config.set('DEFAULT', 'clang_version', '3.4')
     else:
