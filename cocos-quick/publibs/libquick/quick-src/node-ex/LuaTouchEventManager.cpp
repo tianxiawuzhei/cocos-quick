@@ -84,6 +84,11 @@ LuaTouchEventManager::~LuaTouchEventManager()
 bool LuaTouchEventManager::init()
 {
     _running = true;
+    
+    if (!m_touchDispatchingEnabled)
+    {
+       enableTouchDispatching();
+    }
 
     auto size = Director::getInstance()->getWinSize();
     return initWithSize(size);
@@ -109,10 +114,10 @@ void LuaTouchEventManager::addTouchableNode(LuaEventNode *lnode)
         _touchableNodes.pushBack(lnode);
         _nodeLuaEventNodeMap.insert(std::make_pair(activeNode->_ID, lnode));
         //CCLOG("ADD TOUCHABLE NODE <%p>", node->getNode());
-        if (!m_touchDispatchingEnabled)
-        {
-            enableTouchDispatching();
-        }
+//        if (!m_touchDispatchingEnabled)
+//        {
+//            enableTouchDispatching();
+//        }
     }
 }
 
@@ -129,147 +134,138 @@ void LuaTouchEventManager::removeTouchableNode(LuaEventNode *lnode)
         _nodeLuaEventNodeMap.erase(found);
     }
     //CCLOG("REMOVE TOUCHABLE NODE <%p>", node->getNode());
-    if (_touchableNodes.size() == 0 && m_touchDispatchingEnabled)
-    {
-        disableTouchDispatching();
-        destroyInstance();
-    }
+//    if (_touchableNodes.size() == 0 && m_touchDispatchingEnabled)
+//    {
+//        disableTouchDispatching();
+//        destroyInstance();
+//    }
 }
 
 void LuaTouchEventManager::onTouchesBegan(const std::vector<Touch*>& touches, Event *event)
 {
     if (!m_touchDispatchingEnabled || _touchableNodes.size() < 1) return;
-
+    
     // save touches id
     for (auto it = touches.begin(); it != touches.end(); ++it)
-    {
+     {
         m_touchingIds.insert(((Touch*)*it)->getID());
-    }
-
+     }
+    
     // check current in touching
     if (_touchingTargets.size())
-    {
+     {
         dispatchingTouchEvent(touches, event, CCTOUCHADDED);
         return;
-    }
-
+     }
+    
     // start new touching event
     // sort touchable nodes
     sortAllTouchableNodes(_touchableNodes);
-
+    
     // find touching target
-    bool isTouchable = true;
+//    bool isTouchable = true;
     LuaEventNode *node = nullptr;
     LuaEventNode *checkTouchableNode = nullptr;
     LuaTouchTargetNode *touchTarget = nullptr;
-
+    
     for (std::size_t i = 0; i < _touchableNodes.size(); ++i)
-    {
+     {
         checkTouchableNode = node = _touchableNodes.at(i);
-        // check node is visible and capturing enabled
-        isTouchable = true;
-        do
-        {
-            isTouchable = isTouchable
-                && checkTouchableNode->isRunning()
-                && checkTouchableNode->isVisible()
-                && checkTouchableNode->isTouchCaptureEnabled();
-            checkTouchableNode = checkTouchableNode->getParent();
-        } while (checkTouchableNode && isTouchable);
-        if (!isTouchable) continue;
-
+        
         // prepare for touch testing
         touchTarget = nullptr;
         Node *activeNode = node->getActiveNode();
         if (!activeNode) continue;
-        const Rect boundingBox = utils::getCascadeBoundingBox(activeNode);
-
+//        const Rect boundingBox = utils::getCascadeBoundingBox(activeNode);
+        
         // set touch target
         Touch *touch = nullptr;
         for (auto it = touches.begin(); it != touches.end(); ++it)
-        {
+         {
             touch = (Touch*)*it;
             const Point touchPoint = touch->getLocation();
-
-            if (boundingBox.containsPoint(touchPoint))
-            {
+            
+//            if (boundingBox.containsPoint(touchPoint))
+//             {
                 if (!touchTarget)
-                {
+                 {
                     touchTarget = LuaTouchTargetNode::create(node);
-                }
-
+                 }
+                
                 if (touchTarget->getTouchMode() == LuaEventNode::modeTouchesOneByOne)
-                {
+                 {
                     touchTarget->setTouchId(touch->getID());
                     break;
-                }
-            }
-        }
-
+                 }
+//             }
+         }
+        
         if (!touchTarget)
-        {
+         {
             // touch points not in current target, try to next
             continue;
-        }
-
+         }
+        
         // try to dispatching event
-        Vector<LuaEventNode*> path(10);
-        node = touchTarget->getNode();
-        do
-        {
-            path.pushBack(node);
-            node = node->getParent();
-        } while (node != nullptr /*&& node != this*/);
-
-        // phase: capturing
-        // from parent to child
-        bool dispatchingContinue = true;
-        int touchMode = touchTarget->getTouchMode();
-        for (long i = path.size() - 1; dispatchingContinue && i >= 0; --i)
-        {
-            node = path.at(i);
-            if (touchMode == LuaEventNode::modeTouchesAllAtOnce)
-            {
-                node->ccTouchesCaptureBegan(touches, touchTarget->getNode());
-            }
-            else
-            {
-                dispatchingContinue = node->ccTouchCaptureBegan(touchTarget->findTouch(touches), touchTarget->getNode());
-            }
-        }
-
-        if (!dispatchingContinue)
-        {
-            // the target stop dispatching, try to next
-            continue;
-        }
-
+//        Vector<LuaEventNode*> path(10);
+//        node = touchTarget->getNode();
+//        do
+//         {
+//            path.pushBack(node);
+//            node = node->getParent();
+//         } while (node != nullptr /*&& node != this*/);
+//        
+//        // phase: capturing
+//        // from parent to child
+//        bool dispatchingContinue = true;
+//        int touchMode = touchTarget->getTouchMode();
+//        for (long i = path.size() - 1; dispatchingContinue && i >= 0; --i)
+//         {
+//            node = path.at(i);
+//            if (touchMode == LuaEventNode::modeTouchesAllAtOnce)
+//             {
+//                node->ccTouchesCaptureBegan(touches, touchTarget->getNode());
+//             }
+//            else
+//             {
+//                dispatchingContinue = node->ccTouchCaptureBegan(touchTarget->findTouch(touches), touchTarget->getNode());
+//             }
+//         }
+//        
+//        if (!dispatchingContinue)
+//         {
+//            // the target stop dispatching, try to next
+//            continue;
+//         }
+        
         // phase: targeting
         node = touchTarget->getNode();
         bool ret = true;
+        int touchMode = touchTarget->getTouchMode();
         if (touchMode == LuaEventNode::modeTouchesAllAtOnce)
-        {
+         {
             node->ccTouchesBegan(touches, event);
-        }
+         }
         else
-        {
+         {
             ret = node->ccTouchBegan(touchTarget->findTouch(touches), event);
-        }
-
+         }
+        
         if (ret)
-        {
+         {
             _touchingTargets.pushBack(touchTarget);
             //CCLOG("ADD TOUCH TARGET [%p]", touchTarget->getNode()->getNode());
-        }
-
-        if (node->isTouchSwallowEnabled())
-        {
-            // target swallow touch event, stop dispatching
-            break;
-        }
-
+           
+            if (node->isTouchSwallowEnabled())
+             {
+                // target swallow touch event, stop dispatching
+                break;
+             }
+            
+         }
+        
         // continue dispatching, try to next
-    }
+     }
 }
 
 void LuaTouchEventManager::onTouchesMoved(const std::vector<Touch*>& touches, Event *event)
@@ -331,10 +327,10 @@ void LuaTouchEventManager::cleanup(void)
     _nodePriorityMap.clear();
     _touchableNodes.clear();
     _touchingTargets.clear();
-    if (_touchListener) {
-        _eventDispatcher->removeEventListener(_touchListener);
-        _touchListener = nullptr;
-    }
+//    if (_touchListener) {
+//        _eventDispatcher->removeEventListener(_touchListener);
+//        _touchListener = nullptr;
+//    }
     _running = false;
 }
 
@@ -436,69 +432,69 @@ void LuaTouchEventManager::dispatchingTouchEventReal(const std::vector<Touch*>& 
         }
 
         // try to dispatching event
-        Vector<LuaEventNode*> path(10);
-        node = touchTarget->getNode();
-        do
-        {
-            path.pushBack(node);
-            node = node->getParent();
-        } while (node != nullptr /*&& node != this*/);
-
-        // phase: capturing
-        // from parent to child
-        for (long j = path.size() - 1; j >= 0; --j)
-        {
-            node = path.at(j);
-            if (touchMode == LuaEventNode::modeTouchesAllAtOnce)
-            {
-                switch (event)
-                {
-                case CCTOUCHMOVED:
-                    node->ccTouchesCaptureMoved(touches, touchTarget->getNode());
-                    break;
-
-                case CCTOUCHENDED:
-                    node->ccTouchesCaptureEnded(touches, touchTarget->getNode());
-                    break;
-
-                case CCTOUCHCANCELLED:
-                    node->ccTouchesCaptureCancelled(touches, touchTarget->getNode());
-                    break;
-
-                case CCTOUCHADDED:
-                    node->ccTouchesCaptureAdded(touches, touchTarget->getNode());
-                    break;
-
-                case CCTOUCHREMOVED:
-                    node->ccTouchesCaptureRemoved(touches, touchTarget->getNode());
-                    break;
-                }
-            }
-            else
-            {
-                switch (event)
-                {
-                case CCTOUCHMOVED:
-                    node->ccTouchCaptureMoved(touch, touchTarget->getNode());
-                    break;
-
-                case CCTOUCHENDED:
-                    node->ccTouchCaptureEnded(touch, touchTarget->getNode());
-                    break;
-
-                case CCTOUCHCANCELLED:
-                    node->ccTouchCaptureCancelled(touch, touchTarget->getNode());
-                    break;
-
-                case CCTOUCHREMOVED:
-                    if (touch->getID() == touchTarget->getTouchId())
-                    {
-                        node->ccTouchCaptureEnded(touch, touchTarget->getNode());
-                    }
-                    break;
-                }
-            }
-        } // for (long j = path.size() - 1; j >= 0; --j)
+//        Vector<LuaEventNode*> path(10);
+//        node = touchTarget->getNode();
+//        do
+//        {
+//            path.pushBack(node);
+//            node = node->getParent();
+//        } while (node != nullptr /*&& node != this*/);
+//
+//        // phase: capturing
+//        // from parent to child
+//        for (long j = path.size() - 1; j >= 0; --j)
+//        {
+//            node = path.at(j);
+//            if (touchMode == LuaEventNode::modeTouchesAllAtOnce)
+//            {
+//                switch (event)
+//                {
+//                case CCTOUCHMOVED:
+//                    node->ccTouchesCaptureMoved(touches, touchTarget->getNode());
+//                    break;
+//
+//                case CCTOUCHENDED:
+//                    node->ccTouchesCaptureEnded(touches, touchTarget->getNode());
+//                    break;
+//
+//                case CCTOUCHCANCELLED:
+//                    node->ccTouchesCaptureCancelled(touches, touchTarget->getNode());
+//                    break;
+//
+//                case CCTOUCHADDED:
+//                    node->ccTouchesCaptureAdded(touches, touchTarget->getNode());
+//                    break;
+//
+//                case CCTOUCHREMOVED:
+//                    node->ccTouchesCaptureRemoved(touches, touchTarget->getNode());
+//                    break;
+//                }
+//            }
+//            else
+//            {
+//                switch (event)
+//                {
+//                case CCTOUCHMOVED:
+//                    node->ccTouchCaptureMoved(touch, touchTarget->getNode());
+//                    break;
+//
+//                case CCTOUCHENDED:
+//                    node->ccTouchCaptureEnded(touch, touchTarget->getNode());
+//                    break;
+//
+//                case CCTOUCHCANCELLED:
+//                    node->ccTouchCaptureCancelled(touch, touchTarget->getNode());
+//                    break;
+//
+//                case CCTOUCHREMOVED:
+//                    if (touch->getID() == touchTarget->getTouchId())
+//                    {
+//                        node->ccTouchCaptureEnded(touch, touchTarget->getNode());
+//                    }
+//                    break;
+//                }
+//            }
+//        } // for (long j = path.size() - 1; j >= 0; --j)
 
         // phase: targeting
         node = touchTarget->getNode();

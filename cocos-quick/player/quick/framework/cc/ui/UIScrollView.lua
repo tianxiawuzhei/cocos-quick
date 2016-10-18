@@ -96,7 +96,7 @@ function UIScrollView:ctor(params)
 
 	-- touchOnContent true:当触摸在滚动内容上才有效 false:当触摸在显示区域(viewRect_)就有效
 	-- 当内容小于显示区域时，两者就有区别了
-	self:setTouchType(params.touchOnContent or true)
+	self:setTouchType(params.touchOnContent or false)
 
 	self:addBgColorIf(params)
 	self:addBgGradientColorIf(params)
@@ -168,7 +168,7 @@ end
 --------------------------------
 -- 得到滚动控件的显示区域
 -- @function [parent=#UIScrollView] getViewRect
--- @return Rect#Rect 
+-- @return Rect#Rect
 
 -- end --
 
@@ -185,7 +185,7 @@ end
 -- @param number right 右边的空白
 -- @param number bottom 下边的空白
 -- @param number left 左边的空白
--- @return UIScrollView#UIScrollView 
+-- @return UIScrollView#UIScrollView
 
 -- end --
 
@@ -211,7 +211,7 @@ end
 -- 设置滚动方向
 -- @function [parent=#UIScrollView] setDirection
 -- @param number dir 滚动方向
--- @return UIScrollView#UIScrollView 
+-- @return UIScrollView#UIScrollView
 
 -- end --
 
@@ -226,7 +226,7 @@ end
 --------------------------------
 -- 获取滚动方向
 -- @function [parent=#UIScrollView] getDirection
--- @return number#number 
+-- @return number#number
 
 -- end --
 
@@ -240,7 +240,7 @@ end
 -- 设置滚动控件是否开启回弹功能
 -- @function [parent=#UIScrollView] setBounceable
 -- @param boolean bBounceable 是否开启回弹
--- @return UIScrollView#UIScrollView 
+-- @return UIScrollView#UIScrollView
 
 -- end --
 
@@ -259,7 +259,7 @@ end
 -- 内容小于显示区域时，true:在空白区域触摸无效,false:在空白区域触摸也可滚动内容
 -- @function [parent=#UIScrollView] setTouchType
 -- @param boolean bTouchOnContent 是否触控到滚动内容上才有效
--- @return UIScrollView#UIScrollView 
+-- @return UIScrollView#UIScrollView
 
 -- end --
 
@@ -292,7 +292,7 @@ end
 -- 判断一个node是否在滚动控件的显示区域中
 -- @function [parent=#UIScrollView] isItemInViewRect
 -- @param node item scrollView中的项
--- @return boolean#boolean 
+-- @return boolean#boolean
 
 -- end --
 
@@ -327,7 +327,7 @@ end
 -- 设置scrollview可触摸
 -- @function [parent=#UIScrollView] setTouchEnabled
 -- @param boolean bEnabled 是否开启触摸
--- @return UIScrollView#UIScrollView 
+-- @return UIScrollView#UIScrollView
 
 -- end --
 
@@ -346,7 +346,7 @@ end
 -- 将要显示的node加到scrollview中,scrollView只支持滚动一个node
 -- @function [parent=#UIScrollView] addScrollNode
 -- @param node node 要显示的项
--- @return UIScrollView#UIScrollView 
+-- @return UIScrollView#UIScrollView
 
 -- end --
 
@@ -358,14 +358,14 @@ function UIScrollView:addScrollNode(node)
 		self.viewRect_ = self.scrollNode:getCascadeBoundingBox()
 		self:setViewRect(self.viewRect_)
 	end
-	node:setTouchSwallowEnabled(false)
-	node:setTouchEnabled(true)
+	-- node:setTouchSwallowEnabled(true)
+	-- node:setTouchEnabled(true)
 	-- node:addNodeEventListener(cc.NODE_TOUCH_EVENT, function (event)
  --        return self:onTouch_(event)
  --    end)
-    node:addNodeEventListener(cc.NODE_TOUCH_CAPTURE_EVENT, function (event)
-        return self:onTouchCapture_(event)
-    end)
+    -- node:addNodeEventListener(cc.NODE_TOUCH_CAPTURE_EVENT, function (event)
+    --     return self:onTouchCapture_(event)
+    -- end)
 	self:addTouchNode()
 
     return self
@@ -390,7 +390,7 @@ end
 -- 注册滚动控件的监听函数
 -- @function [parent=#UIScrollView] onScroll
 -- @param function listener 监听函数
--- @return UIScrollView#UIScrollView 
+-- @return UIScrollView#UIScrollView
 
 -- end --
 
@@ -418,12 +418,13 @@ function UIScrollView:update_(dt)
 end
 
 function UIScrollView:onTouchCapture_(event)
-	if ("began" == event.name or "moved" == event.name or "ended" == event.name)
-		and self:isTouchInViewRect(event) then
-		return true
-	else
-		return false
-	end
+	-- if ("began" == event.name or "moved" == event.name or "ended" == event.name)
+	-- 	and self:isTouchInViewRect(event) then
+	-- 	return true
+	-- else
+	-- 	return false
+	-- end
+	return false
 end
 
 function UIScrollView:onTouch_(event)
@@ -672,7 +673,7 @@ end
 function UIScrollView:isSideShow()
 	local bound = self.scrollNode:getCascadeBoundingBox()
     local localPos = self:convertToNodeSpace(cc.p(bound.x, bound.y))
-    local verticalSideShow = (localPos.y > self.viewRect_.y) 
+    local verticalSideShow = (localPos.y > self.viewRect_.y)
                            or (localPos.y + bound.height < self.viewRect_.y + self.viewRect_.height)
     local horizontalSideShow = (localPos.x > self.viewRect_.x)
                              or (localPos.x + bound.width < self.viewRect_.x + self.viewRect_.width)

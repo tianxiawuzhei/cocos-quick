@@ -14,7 +14,7 @@ end
 
 function ListViewEx:setHighlightNode(node)
     self.highlightNode_ = node
-    
+
     if node then
         self.container:addChild(node, -1)
     end

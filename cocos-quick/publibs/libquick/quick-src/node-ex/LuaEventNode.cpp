@@ -40,7 +40,7 @@ LuaEventNode *LuaEventNode::create(Node *node)
 }
 
 LuaEventNode::LuaEventNode(Node *node)
-: _bTouchCaptureEnabled(true)
+: _bTouchCaptureEnabled(false)
 , _bTouchSwallowEnabled(true)
 , _bTouchEnabled(false)
 , _eTouchMode(modeTouchesOneByOne)
@@ -298,9 +298,14 @@ bool LuaEventNode::ccTouchBegan(Touch *pTouch, Event *pEvent)
     CC_UNUSED_PARAM(pTouch);
     CC_UNUSED_PARAM(pEvent);
     {
-        executeScriptTouchHandler(CCTOUCHBEGAN, pTouch);
+       int rt = executeScriptTouchHandler(CCTOUCHBEGAN, pTouch);
+       if (rt) {
+           return true;
+       }
+       
+       return false;
     }
-    return true;
+//    return true;
 }
 
 void LuaEventNode::ccTouchMoved(Touch *pTouch, Event *pEvent)

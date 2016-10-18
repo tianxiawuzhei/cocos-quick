@@ -15,13 +15,13 @@
 		A249525E1D9A7616001E033F /* lua_cocos2dx_quick_manual.hpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602C1D9A382800D69F39 /* lua_cocos2dx_quick_manual.hpp */; };
 		A249525F1D9A7616001E033F /* LuaEventNode.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602E1D9A382800D69F39 /* LuaEventNode.h */; };
 		A24952601D9A7616001E033F /* LuaNodeManager.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60301D9A382800D69F39 /* LuaNodeManager.h */; };
-		A24952611D9A7616001E033F /* LuaTouchEventManager.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60321D9A382800D69F39 /* LuaTouchEventManager.h */; };
 		A24952621D9A7616001E033F /* LuaTouchTargetNode.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60341D9A382800D69F39 /* LuaTouchTargetNode.h */; };
 		A24952631D9A7623001E033F /* lua_cocos2dx_quick_manual.hpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602C1D9A382800D69F39 /* lua_cocos2dx_quick_manual.hpp */; };
 		A24952641D9A7623001E033F /* LuaEventNode.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602E1D9A382800D69F39 /* LuaEventNode.h */; };
 		A24952651D9A7623001E033F /* LuaNodeManager.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60301D9A382800D69F39 /* LuaNodeManager.h */; };
-		A24952661D9A7623001E033F /* LuaTouchEventManager.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60321D9A382800D69F39 /* LuaTouchEventManager.h */; };
 		A24952671D9A7623001E033F /* LuaTouchTargetNode.h in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60341D9A382800D69F39 /* LuaTouchTargetNode.h */; };
+		A27E5AE41DB5C6F000E2B142 /* LuaTouchEventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27E5AE21DB5C6F000E2B142 /* LuaTouchEventManager.cpp */; };
+		A27E5AE51DB5C6F000E2B142 /* LuaTouchEventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A27E5AE21DB5C6F000E2B142 /* LuaTouchEventManager.cpp */; };
 		A2DE5D851D9A2B8800D69F39 /* fpconv.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D281D9A2B8700D69F39 /* fpconv.c */; };
 		A2DE5D861D9A2B8800D69F39 /* lua_cjson.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D2A1D9A2B8700D69F39 /* lua_cjson.c */; };
 		A2DE5D871D9A2B8800D69F39 /* strbuf.c in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5D2C1D9A2B8700D69F39 /* strbuf.c */; };
@@ -137,8 +137,6 @@
 		A2DE60381D9A382800D69F39 /* LuaEventNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602D1D9A382800D69F39 /* LuaEventNode.cpp */; };
 		A2DE60391D9A382800D69F39 /* LuaNodeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602F1D9A382800D69F39 /* LuaNodeManager.cpp */; };
 		A2DE603A1D9A382800D69F39 /* LuaNodeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE602F1D9A382800D69F39 /* LuaNodeManager.cpp */; };
-		A2DE603B1D9A382800D69F39 /* LuaTouchEventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60311D9A382800D69F39 /* LuaTouchEventManager.cpp */; };
-		A2DE603C1D9A382800D69F39 /* LuaTouchEventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60311D9A382800D69F39 /* LuaTouchEventManager.cpp */; };
 		A2DE603D1D9A382800D69F39 /* LuaTouchTargetNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60331D9A382800D69F39 /* LuaTouchTargetNode.cpp */; };
 		A2DE603E1D9A382800D69F39 /* LuaTouchTargetNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2DE60331D9A382800D69F39 /* LuaTouchTargetNode.cpp */; };
 /* End PBXBuildFile section */
@@ -173,6 +171,8 @@
 		A24951F61D9A4FAE001E033F /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		A24951F71D9A4FAE001E033F /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		A24951F81D9A4FAE001E033F /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		A27E5AE21DB5C6F000E2B142 /* LuaTouchEventManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaTouchEventManager.cpp; sourceTree = "<group>"; };
+		A27E5AE31DB5C6F000E2B142 /* LuaTouchEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaTouchEventManager.h; sourceTree = "<group>"; };
 		A2DE5C421D9A2AF800D69F39 /* liblibquickios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibquickios.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DE5D261D9A2B8700D69F39 /* Android.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Android.mk; sourceTree = "<group>"; };
 		A2DE5D281D9A2B8700D69F39 /* fpconv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fpconv.c; sourceTree = "<group>"; };
@@ -373,8 +373,6 @@
 		A2DE602E1D9A382800D69F39 /* LuaEventNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaEventNode.h; sourceTree = "<group>"; };
 		A2DE602F1D9A382800D69F39 /* LuaNodeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaNodeManager.cpp; sourceTree = "<group>"; };
 		A2DE60301D9A382800D69F39 /* LuaNodeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaNodeManager.h; sourceTree = "<group>"; };
-		A2DE60311D9A382800D69F39 /* LuaTouchEventManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaTouchEventManager.cpp; sourceTree = "<group>"; };
-		A2DE60321D9A382800D69F39 /* LuaTouchEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaTouchEventManager.h; sourceTree = "<group>"; };
 		A2DE60331D9A382800D69F39 /* LuaTouchTargetNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaTouchTargetNode.cpp; sourceTree = "<group>"; };
 		A2DE60341D9A382800D69F39 /* LuaTouchTargetNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaTouchTargetNode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -866,14 +864,14 @@
 		A2DE602A1D9A382800D69F39 /* node-ex */ = {
 			isa = PBXGroup;
 			children = (
+				A27E5AE21DB5C6F000E2B142 /* LuaTouchEventManager.cpp */,
+				A27E5AE31DB5C6F000E2B142 /* LuaTouchEventManager.h */,
 				A2DE602B1D9A382800D69F39 /* lua_cocos2dx_quick_manual.cpp */,
 				A2DE602C1D9A382800D69F39 /* lua_cocos2dx_quick_manual.hpp */,
 				A2DE602D1D9A382800D69F39 /* LuaEventNode.cpp */,
 				A2DE602E1D9A382800D69F39 /* LuaEventNode.h */,
 				A2DE602F1D9A382800D69F39 /* LuaNodeManager.cpp */,
 				A2DE60301D9A382800D69F39 /* LuaNodeManager.h */,
-				A2DE60311D9A382800D69F39 /* LuaTouchEventManager.cpp */,
-				A2DE60321D9A382800D69F39 /* LuaTouchEventManager.h */,
 				A2DE60331D9A382800D69F39 /* LuaTouchTargetNode.cpp */,
 				A2DE60341D9A382800D69F39 /* LuaTouchTargetNode.h */,
 			);
@@ -957,7 +955,6 @@
 				A24952631D9A7623001E033F /* lua_cocos2dx_quick_manual.hpp in Sources */,
 				A24952641D9A7623001E033F /* LuaEventNode.h in Sources */,
 				A24952651D9A7623001E033F /* LuaNodeManager.h in Sources */,
-				A24952661D9A7623001E033F /* LuaTouchEventManager.h in Sources */,
 				A24952671D9A7623001E033F /* LuaTouchTargetNode.h in Sources */,
 				A2DE5FAE1D9A2E0300D69F39 /* OpenUDIDIOS.m in Sources */,
 				A24951FA1D9A4FAE001E033F /* SBJsonBase.m in Sources */,
@@ -979,7 +976,6 @@
 				A2DE5F8D1D9A2E0300D69F39 /* CCSaturationFilter.cpp in Sources */,
 				A2DE5F9D1D9A2E0300D69F39 /* CCHTTPRequest.cpp in Sources */,
 				A2DE5F7C1D9A2E0300D69F39 /* HelperFunc.cpp in Sources */,
-				A2DE603B1D9A382800D69F39 /* LuaTouchEventManager.cpp in Sources */,
 				A24951FC1D9A4FAE001E033F /* SBJsonWriter.m in Sources */,
 				A2DE5FA31D9A2E0300D69F39 /* CCCryptoIOS.mm in Sources */,
 				A2DE5F941D9A2E0300D69F39 /* cocos2dx_extra_ios_iap_luabinding.cpp in Sources */,
@@ -1001,6 +997,7 @@
 				A2DE5F871D9A2E0300D69F39 /* CCGammaFilter.cpp in Sources */,
 				A2DE5D8A1D9A2B8800D69F39 /* lpack.c in Sources */,
 				A2DE5FA91D9A2E0300D69F39 /* CCStoreReceiptVerifyRequestIOS.mm in Sources */,
+				A27E5AE41DB5C6F000E2B142 /* LuaTouchEventManager.cpp in Sources */,
 				A2DE5FB01D9A2E0300D69F39 /* ReachabilityIOSMac.m in Sources */,
 				A2DE5F801D9A2E0300D69F39 /* CCBlurFilter.cpp in Sources */,
 				A2DE5FB21D9A2E0300D69F39 /* CCNative.mm in Sources */,
@@ -1040,7 +1037,6 @@
 				A249525E1D9A7616001E033F /* lua_cocos2dx_quick_manual.hpp in Sources */,
 				A249525F1D9A7616001E033F /* LuaEventNode.h in Sources */,
 				A24952601D9A7616001E033F /* LuaNodeManager.h in Sources */,
-				A24952611D9A7616001E033F /* LuaTouchEventManager.h in Sources */,
 				A24952621D9A7616001E033F /* LuaTouchTargetNode.h in Sources */,
 				A2DE5FD91D9A364C00D69F39 /* CCExposureFilter.cpp in Sources */,
 				A2DE5FDB1D9A364C00D69F39 /* lua_cocos2dx_extension_nanovg_auto.cpp in Sources */,
@@ -1056,13 +1052,13 @@
 				A2DE5FE91D9A364C00D69F39 /* CCSaturationFilter.cpp in Sources */,
 				A2DE5FEA1D9A364C00D69F39 /* CCHTTPRequest.cpp in Sources */,
 				A2DE5FEB1D9A364C00D69F39 /* HelperFunc.cpp in Sources */,
-				A2DE603C1D9A382800D69F39 /* LuaTouchEventManager.cpp in Sources */,
 				A2DE5FF01D9A364C00D69F39 /* fpconv.c in Sources */,
 				A2DE5FF11D9A364C00D69F39 /* NVGNode.cpp in Sources */,
 				A2DE5FF21D9A364C00D69F39 /* CCSepiaFilter.cpp in Sources */,
 				A2DE5FF31D9A364C00D69F39 /* cocos2dx_extra_luabinding.cpp in Sources */,
 				A2DE5FF41D9A364C00D69F39 /* debugger.c in Sources */,
 				A2DE5FF51D9A364C00D69F39 /* CCCrypto.cpp in Sources */,
+				A27E5AE51DB5C6F000E2B142 /* LuaTouchEventManager.cpp in Sources */,
 				A2DE5FF61D9A364C00D69F39 /* CCCustomFilter.cpp in Sources */,
 				A2DE5FF71D9A364C00D69F39 /* CCNativeMac.mm in Sources */,
 				A2DE5FF81D9A364C00D69F39 /* ccFilterShaders.cpp in Sources */,

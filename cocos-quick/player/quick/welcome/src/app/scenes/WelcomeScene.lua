@@ -12,7 +12,16 @@ function WelcomeScene:ctor()
     self:createLogo(bg)
     self:createTabWidget(bg)
     self:createCopyright(bg)
+
+    local x = handler(self, self.testHanler)
+    printf(x())
 end
+
+function WelcomeScene:testHanler()
+    -- body
+    return "testHanler ======="
+end
+
 
 local function stripPath(path, maxLen)
     local l = string.len(path)
@@ -64,7 +73,7 @@ function WelcomeScene:createButtons(node)
     :pos(display.width-padding, display.top - 55)
     :addTo(node)
     :onButtonClicked(function()
-       device.openURL("http://tairan.com/engines-download") 
+       device.openURL("http://tairan.com/engines-download")
     end)
 
     cc.ui.UIPushButton.new(images, {scale9 = true})
@@ -219,7 +228,7 @@ function WelcomeScene:createTabWidget(node)
         end
     end
 
-    local index = (#cc.player.settings.PLAYER_OPEN_RECENTS < 1 and 2) or 1 or (#cc.player.settings.PLAYER_OPEN_RECENTS < 1 and 3) 
+    local index = (#cc.player.settings.PLAYER_OPEN_RECENTS < 1 and 2) or 1 or (#cc.player.settings.PLAYER_OPEN_RECENTS < 1 and 3)
     self.tabWidget.setCurrentIndex(index)
 
 end
@@ -273,7 +282,7 @@ function WelcomeScene:createHeaders(node)
         off = "#TabButtonNormal.png",
     }
 
-    local headers = {{title="我的项目",widget=self.localProjectListView_}, 
+    local headers = {{title="我的项目",widget=self.localProjectListView_},
         {title="示例",widget=self.lvGrid},
         {title="社区动态",widget=self.linkGrid}
     }
@@ -397,7 +406,7 @@ function WelcomeScene:createSamples(node)
     end)
 
 
-    self.lvGrid:setTouchSwallowEnabled(false)
+    self.lvGrid:setTouchSwallowEnabled(true)
     self.lvGrid:setVisible(false)
     self.lvGrid:addTo(node)
     self.lvGrid.hasItemLoaded = false
@@ -447,12 +456,12 @@ function WelcomeScene:createUrlLinks(node)
 
         local listView = event.listView
         if "clicked" == event.name then
-            self.linkGrid.currentItem = event.item
+            -- self.linkGrid.currentItem = event.item
         end
     end)
 
 
-    self.linkGrid:setTouchSwallowEnabled(false)
+    self.linkGrid:setTouchSwallowEnabled(true)
     self.linkGrid:setVisible(false)
     self.linkGrid:addTo(node)
     self.linkGrid.hasItemLoaded1 = false
@@ -512,10 +521,13 @@ function WelcomeScene:createOneLink(sample, colorVal)
     local image = display.newSprite(sample.image)
         :addTo(button)
     button:addNodeEventListener(cc.NODE_TOUCH_EVENT, function ( event )
+            local name, x, y = event.name, event.x, event.y
             if event.name == "began" then
-                image:setScale(1.1)
-                return true
-
+                if button:getCascadeBoundingBox():containsPoint(cc.p(x, y)) then
+                    image:setScale(1.1)
+                    return true
+                end
+                return false
             elseif event.name == "moved" then
                 image:setScale(1.0)
                 button.isTouchMoved_ = true
@@ -526,12 +538,12 @@ function WelcomeScene:createOneLink(sample, colorVal)
                     device.openURL(sample.path)
                 end
                 button.isTouchMoved_ = false
-            else 
+            else
                 image:setScale(1.0)
             end
         end)
     button:addTo(node)
-    
+
 
     -- 简单表述
     local label2 = cc.ui.UILabel.new({
@@ -615,9 +627,15 @@ function WelcomeScene:createDemoButton(sample)
     button:pos(100, 65)
     button:setButtonSize(188, 130)
     button:addNodeEventListener(cc.NODE_TOUCH_EVENT, function ( event )
+            local name, x, y = event.name, event.x, event.y
             if event.name == "began" then
-                return true
+                printf ("sample +++++++ 111111")
+                if button:checkTouchInSprite_(x, y) then
+                    printf ("sample +++++++ 2222")
+                    return true
+                end
 
+                return false
             elseif event.name == "moved" then
                 button.isTouchMoved_ = true
 

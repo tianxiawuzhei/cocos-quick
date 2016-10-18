@@ -166,7 +166,7 @@ function Node:setTouchEnabled(enable)
     if not flagNodeTouchInCocos then
         return self
     end
-    
+
     self:setBaseNodeEventListener()
     return self
 end
@@ -177,7 +177,7 @@ function Node:setTouchMode(mode)
     if not flagNodeTouchInCocos then
         return self
     end
-    
+
     self:setBaseNodeEventListener()
     return self
 end
@@ -188,7 +188,7 @@ function Node:setTouchSwallowEnabled(enable)
     if not flagNodeTouchInCocos then
         return self
     end
-    
+
     self:setBaseNodeEventListener()
     return self
 end
@@ -199,7 +199,7 @@ function Node:setTouchCaptureEnabled(enable)
     if not flagNodeTouchInCocos then
         return self
     end
-    
+
     self:setBaseNodeEventListener()
     return self
 end
@@ -209,7 +209,7 @@ function Node:setKeypadEnabled(enable)
         self:setKeyboardEnabled(enable)
         return self
     end
-    
+
     _enable = self._keyboardEnabled or false
     if enable == _enable then
         return self
@@ -261,7 +261,7 @@ function Node:scheduleUpdate()
         self:EventDispatcher(c.NODE_ENTER_FRAME_EVENT, dt)
     end
 
-    self:scheduleUpdateWithPriorityLua(listener, 0) 
+    self:scheduleUpdateWithPriorityLua(listener, 0)
     return self
 end
 
@@ -302,7 +302,7 @@ function Node:addNodeEventListener( evt, hdl, tag, priority )
             enable_ = true,
             removed_ = false,
         }
-    if evt==c.NODE_ENTER_FRAME_EVENT then
+    if evt==c.NODE_ENTER_FRAME_EVENT or evt == c.NODE_TOUCH_EVENT then
         eventListeners_[1] = lis
     else
         table.insert(eventListeners_, lis)
@@ -440,7 +440,10 @@ function Node:EventDispatcher( idx, data )
                         else
                             rnval = rnval or listenerRet
                         end
-                    end 
+                    else
+                        -- printf("listenerRet:  ", tostring(listenerRet))
+                        return listenerRet
+                    end
                 end
             end
         end
@@ -521,7 +524,7 @@ function Node:copySpecialProperties_(node)
         local clonePeer = clone(peer)
         tolua.setpeer(self, clonePeer)
     end
-    
+
 end
 
 function Node:copyProperties_(node)

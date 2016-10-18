@@ -106,6 +106,7 @@ extern "C"
         
         if (chunk)
         {
+//            CCLOG("get lua file data of %s", chunkName.c_str());
             LuaStack* stack = LuaEngine::getInstance()->getLuaStack();
             stack->luaLoadBuffer(L, (char*)chunk, (int)chunkSize, chunkName.c_str());
             free(chunk);

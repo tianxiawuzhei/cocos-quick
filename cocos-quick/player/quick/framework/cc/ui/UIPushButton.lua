@@ -31,7 +31,6 @@ THE SOFTWARE.
 quick 按钮控件
 
 ]]
-
 local UIButton = import(".UIButton")
 local UIPushButton = class("UIPushButton", UIButton)
 
@@ -96,22 +95,28 @@ end
 function UIPushButton:onTouch_(event)
     local name, x, y = event.name, event.x, event.y
     if name == "began" then
+        printf("UIPushButton began")
         self.touchBeganX = x
         self.touchBeganY = y
-        if not self:checkTouchInSprite_(x, y) then return false end
-        self.fsm_:doEvent("press")
-        self:dispatchEvent({name = UIButton.PRESSED_EVENT, x = x, y = y, touchInTarget = true})
-        return true
+        if self:checkTouchInSprite_(x, y) then
+            self.fsm_:doEvent("press")
+            self:dispatchEvent({name = UIButton.PRESSED_EVENT, x = x, y = y, touchInTarget = true})
+
+            return true
+        end
+
+        return false
     end
 
     -- must the begin point and current point in Button Sprite
     local touchInTarget = self:checkTouchInSprite_(self.touchBeganX, self.touchBeganY)
                         and self:checkTouchInSprite_(x, y)
     if name == "moved" then
-        if touchInTarget and self.fsm_:canDoEvent("press") then
-            self.fsm_:doEvent("press")
-            self:dispatchEvent({name = UIButton.PRESSED_EVENT, x = x, y = y, touchInTarget = true})
-        elseif not touchInTarget and self.fsm_:canDoEvent("release") then
+        -- if touchInTarget and self.fsm_:canDoEvent("press") then
+        --     self.fsm_:doEvent("press")
+        --     self:dispatchEvent({name = UIButton.PRESSED_EVENT, x = x, y = y, touchInTarget = true})
+        -- printf("UIPushButton: moved")
+        if not touchInTarget and self.fsm_:canDoEvent("release") then
             self.fsm_:doEvent("release")
             self:dispatchEvent({name = UIButton.RELEASE_EVENT, x = x, y = y, touchInTarget = false})
         end
