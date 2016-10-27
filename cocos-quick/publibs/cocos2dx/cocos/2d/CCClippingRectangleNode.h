@@ -104,6 +104,14 @@ protected:
     Rect _clippingRegion;
     bool _clippingEnabled;
     
+    //zq expand
+    /**
+     * scissor rect for parent, just for restoring GL_SCISSOR_BOX
+     */
+    Rect getViewRect();
+    Rect _parentScissorRect;
+    bool _scissorRestored;
+    
     CustomCommand _beforeVisitCmdScissor;
     CustomCommand _afterVisitCmdScissor;
 };
