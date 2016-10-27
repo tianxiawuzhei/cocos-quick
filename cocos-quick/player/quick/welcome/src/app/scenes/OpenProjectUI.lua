@@ -24,12 +24,12 @@ local checkboxImages = {
 
 --
 function OpenProjectUI:ctor()
-    self:addNodeEventListener(cc.NODE_EVENT, function(e) 
-            if e.name == "enter" then 
-                self:onEnter() 
-            elseif e.name == "exit" then 
+    self:addNodeEventListener(cc.NODE_EVENT, function(e)
+            if e.name == "enter" then
+                self:onEnter()
+            elseif e.name == "exit" then
                 eventDispatcher:removeEventListener(self.eventListenerCustom_)
-            end 
+            end
         end)
 end
 
@@ -66,7 +66,7 @@ function OpenProjectUI:updatePanelInfo()
 end
 
 function OpenProjectUI:onEnter()
-    
+
     local y = 0
     self:createLabelAndEditLineAndButton("location", "Choose Project Directory:", "", "Select ...",
         function()
@@ -114,7 +114,7 @@ function OpenProjectUI:onEnter()
     :align(display.LEFT_CENTER, 40, display.top - 300)
     :addTo(self)
 
-    self.portraitCheckBox = 
+    self.portraitCheckBox =
     cc.ui.UICheckBoxButton.new(checkboxImages)
         :setButtonLabel(cc.ui.UILabel.new({text = "Portrait", size = fontSize,  color = display.COLOR_WHITE}))
         :setButtonLabelOffset(30, 0)
@@ -124,7 +124,7 @@ function OpenProjectUI:onEnter()
         :addTo(self)
         :setButtonSelected(true)
 
-    self.landscapeCheckBox = 
+    self.landscapeCheckBox =
     cc.ui.UICheckBoxButton.new(checkboxImages)
         :setButtonLabel(cc.ui.UILabel.new({text = "Landscape", size = fontSize,  color = display.COLOR_WHITE}))
         :setButtonLabelOffset(30, 0)
@@ -173,7 +173,7 @@ function OpenProjectUI:onEnter()
 
     --
     self:createYesOrNoButton()
-    self:registerEvents() 
+    self:registerEvents()
 end
 
 function OpenProjectUI:createYesOrNoButton()

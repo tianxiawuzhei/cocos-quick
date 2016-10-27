@@ -411,6 +411,13 @@ function WelcomeScene:createSamples(node)
     self.lvGrid:addTo(node)
     self.lvGrid.hasItemLoaded = false
     self.tabWidget.widgets_[#self.tabWidget.widgets_ +1] = self.lvGrid
+
+    -- printf("UIListView ==== " .. tostring(iskindof(self.lvGrid, "UIListView")))
+    -- printf("UIScrollView ==== " .. tostring(iskindof(self.lvGrid, "UIScrollView")))
+    -- printf("cc.Node ==== " .. tostring(iskindof(self.lvGrid, "cc.Node")))
+    -- printf("cc.ClippingRegionNode ==== " .. tostring(iskindof(self.lvGrid, "cc.ClippingRegionNode")))
+    -- printf("cc.ClippingRectangleNode ==== " .. tostring(iskindof(self.lvGrid, "cc.ClippingRectangleNode")))
+    -- printf("__cname ==== " .. tostring(self.lvGrid.__cname))
 end
 
 function WelcomeScene:loadSampleItems()
@@ -523,7 +530,7 @@ function WelcomeScene:createOneLink(sample, colorVal)
     button:addNodeEventListener(cc.NODE_TOUCH_EVENT, function ( event )
             local name, x, y = event.name, event.x, event.y
             if event.name == "began" then
-                if button:getCascadeBoundingBox():containsPoint(cc.p(x, y)) then
+                if zq.touch.checkTouch(button, cc.rect(0, 0, 190, 140), cc.p(x, y)) then
                     image:setScale(1.1)
                     return true
                 end
@@ -629,9 +636,7 @@ function WelcomeScene:createDemoButton(sample)
     button:addNodeEventListener(cc.NODE_TOUCH_EVENT, function ( event )
             local name, x, y = event.name, event.x, event.y
             if event.name == "began" then
-                printf ("sample +++++++ 111111")
-                if button:checkTouchInSprite_(x, y) then
-                    printf ("sample +++++++ 2222")
+                if zq.touch.checkTouch(button, cc.rect(0, 0, 188, 130), cc.p(x, y)) then
                     return true
                 end
 
