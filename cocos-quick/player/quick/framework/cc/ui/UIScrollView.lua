@@ -495,8 +495,8 @@ function UIScrollView:isTouchInViewRect(event)
 	viewRect.width = self.viewRect_.width
 	viewRect.height = self.viewRect_.height
 	-- dump(viewRect, "new viewRect:")
-
-	return cc.rectContainsPoint(viewRect, cc.p(event.x, event.y))
+	return zq.touch.checkTouch(self, cc.rect(0, 0, viewRect.width, viewRect.height), cc.p(event.x, event.y))
+	-- return cc.rectContainsPoint(viewRect, cc.p(event.x, event.y))
 end
 
 function UIScrollView:isTouchInScrollNode(event)
