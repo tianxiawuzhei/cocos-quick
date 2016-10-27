@@ -48,6 +48,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A222FE981DC08D09009F3A9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A222FE8F1DC08D08009F3A9A /* libzq.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A222FE881DC08CE8009F3A9A;
+			remoteInfo = libzq;
+		};
 		A279131A1D9E5182006A9B3B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A27913141D9E5181006A9B3B /* cocos2d_libs.xcodeproj */;
@@ -187,6 +194,7 @@
 		9FD01B2219F8C6A3005E0C49 /* PlayerTaskServiceMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerTaskServiceMac.mm; sourceTree = "<group>"; };
 		9FD01B2B19F8C6BA005E0C49 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		9FD01B2C19F8C6BA005E0C49 /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppController.mm; sourceTree = "<group>"; };
+		A222FE8F1DC08D08009F3A9A /* libzq.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libzq.xcodeproj; path = ../../../../publibs/libzq/proj.ios_mac/libzq.xcodeproj; sourceTree = "<group>"; };
 		A24952441D9A6443001E033F /* ProjectConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProjectConfig.cpp; sourceTree = "<group>"; };
 		A24952451D9A6443001E033F /* ProjectConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectConfig.h; sourceTree = "<group>"; };
 		A27913141D9E5181006A9B3B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../../../../publibs/cocos2dx/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
@@ -293,6 +301,14 @@
 			name = player;
 			sourceTree = "<group>";
 		};
+		A222FE901DC08D08009F3A9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A222FE991DC08D09009F3A9A /* liblibzq.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A24952431D9A6443001E033F /* ProjectConfig */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +350,7 @@
 		F293B3BD15EB7BE500256477 = {
 			isa = PBXGroup;
 			children = (
+				A222FE8F1DC08D08009F3A9A /* libzq.xcodeproj */,
 				A27913311D9E51BF006A9B3B /* cocos2d_lua_bindings.xcodeproj */,
 				A27913141D9E5181006A9B3B /* cocos2d_libs.xcodeproj */,
 				A27913201D9E518A006A9B3B /* libquick.xcodeproj */,
@@ -457,6 +474,10 @@
 					ProductGroup = A27913291D9E5192006A9B3B /* Products */;
 					ProjectRef = A27913201D9E518A006A9B3B /* libquick.xcodeproj */;
 				},
+				{
+					ProductGroup = A222FE901DC08D08009F3A9A /* Products */;
+					ProjectRef = A222FE8F1DC08D08009F3A9A /* libzq.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -466,6 +487,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		A222FE991DC08D09009F3A9A /* liblibzq.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblibzq.a;
+			remoteRef = A222FE981DC08D09009F3A9A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		A279131B1D9E5182006A9B3B /* libcocos2d Mac.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
