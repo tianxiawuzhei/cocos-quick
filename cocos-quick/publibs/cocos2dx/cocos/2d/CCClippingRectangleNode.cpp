@@ -85,12 +85,15 @@ void ClippingRectangleNode::onBeforeVisitScissor()
             _parentScissorRect = glview->getScissorRect();
             //set the intersection of _parentScissorRect and frame as the new scissor rect
             if (frame.intersectsRect(_parentScissorRect)) {
+                
+                // calculate intersect rect
                 float x = MAX(frame.origin.x, _parentScissorRect.origin.x);
                 float y = MAX(frame.origin.y, _parentScissorRect.origin.y);
                 float xx = MIN(frame.origin.x+frame.size.width, _parentScissorRect.origin.x+_parentScissorRect.size.width);
                 float yy = MIN(frame.origin.y+frame.size.height, _parentScissorRect.origin.y+_parentScissorRect.size.height);
                 float width = xx -x;
                 float height = yy - y;
+                
                 if (width < 0) {
                     width = 0;
                 }
