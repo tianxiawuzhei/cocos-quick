@@ -154,6 +154,11 @@ if LOAD_SHORTCODES_API then
     require(cc.PACKAGE_NAME .. ".shortcodes")
 end
 
+
+--load my lua file
+require("libzq.init")
+
+
 ----
 
 local sharedTextureCache = cc.Director:getInstance():getTextureCache()
